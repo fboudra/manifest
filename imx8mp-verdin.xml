@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="gh"     fetch="https://github.com"/>
+  <remote name="tf"     fetch="https://git.trustedfirmware.org"/>
+  <remote name="kernel" fetch="https://git.kernel.org"/>
+
+  <default remote="gh" revision="master" sync-j="4" clone-depth="1"/>
+
+  <!-- OP-TEE gits -->
+  <project path="build" name="fboudra/build.git" revision="imx8mp-verdin">
+    <linkfile src="imx8mp-verdin.mk" dest="build/Makefile"/>
+  </project>
+
+  <project path="optee_client" name="OP-TEE/optee_client.git" revision="refs/tags/4.1.0"/>
+  <project path="optee_os"     name="OP-TEE/optee_os.git"     revision="refs/tags/4.1.0"/>
+  <project path="optee_test"   name="OP-TEE/optee_test.git"   revision="refs/tags/4.1.0"/>
+
+  <!-- Misc gits -->
+  <project path="buildroot"          name="buildroot/buildroot.git"                   revision="refs/tags/2023.11.1"/>
+  <project path="imx-mkimage"        name="nxp-imx/imx-mkimage.git"                   revision="refs/tags/lf-6.6.3-1.0.0"/>
+  <project path="linux"              name="pub/scm/linux/kernel/git/stable/linux.git" revision="refs/tags/v6.5.13" remote="kernel"/>
+  <project path="u-boot"             name="u-boot/u-boot.git"                         revision="refs/tags/v2024.04-rc4"/>
+  <project path="trusted-firmware-a" name="TF-A/trusted-firmware-a.git"               revision="refs/tags/v2.9.0" remote="tf"/>
+</manifest>
